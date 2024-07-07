@@ -3,8 +3,8 @@
 # */AIPND-revision/intropyproject-classify-pet-images/print_results.py
 #                                                                             
 # PROGRAMMER: Marta Swierczewska
-# DATE CREATED: 06/07/2024                          
-# REVISED DATE: 06/07/2024
+# DATE CREATED: 07/07/2024                          
+# REVISED DATE: 07/07/2024
 # PURPOSE: Create a function print_results that prints the results statistics
 #          from the results statistics dictionary (results_stats_dic). It 
 #          should also allow the user to be able to print out cases of misclassified
@@ -62,5 +62,29 @@ def print_results(results_dic, results_stats_dic, model,
     Returns:
            None - simply printing results.
     """    
+
+    print("\n ** Results\n\nCNN model architecture: ", model,
+          "\nNumber of images: ", results_stats_dic["n_images"], 
+          "\nNumber of dog images: ", results_stats_dic["n_dogs_img"],
+          "\nNumber of not-dog images: ", results_stats_dic["n_notdogs_img"])
+    
+    for key, value in results_stats_dic.items():
+        if key.startswith("pct_"):
+            print(f"{key}: {value:.2f}%")
+
+    if print_incorrect_dogs:
+        print("\nMisclassified dogs: ")
+        if results_stats_dic["pct_correct_dogs"] != 100.00:
+            for key, value in results_dic.items():
+                if sum(results_dic[key][3:]) == 1:
+                    print("Image: {:>30}  Classifier labels: {:>30}".format(key,value[1]))
+
+    if print_incorrect_breed:
+        print("\nMisclassified breeds: ")
+        if results_stats_dic["pct_correct_breed"] != 100.00:
+            for key, value in results_dic.items():
+                if sum(results_dic[key][3:]) == 2 and results_dic[key][2] == 0:
+                    print("Image: {:>30}  Classifier labels: {:>30}".format(key,value[1]))
+        
     None
                 

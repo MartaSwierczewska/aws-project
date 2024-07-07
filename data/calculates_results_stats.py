@@ -3,7 +3,7 @@
 # */AIPND-revision/intropyproject-classify-pet-images/calculates_results_stats.py
 #                                                                             
 # PROGRAMMER: Marta Swierczewska
-# DATE CREATED: 06/07/2024                          
+# DATE CREATED: 07/07/2024                          
 # REVISED DATE: 07/07/2024
 # PURPOSE: Create a function calculates_results_stats that calculates the 
 #          statistics of the results of the programrun using the classifier's model 
@@ -69,18 +69,20 @@ def calculates_results_stats(results_dic):
                      on how to calculate the counts and statistics.
     """   
 
-    results_stats_dic = {
-        'n_images': len(results_dic)
-    }
+    results_stats_dic = {}
 
+    n_images = len(results_dic)
     n_correct_dogs = 0
     n_dogs_images = 0
     n_correct_notdogs = 0
     n_notdogs_images = 0
     n_correct_breed = 0
+    n_labels_match = 0
 
     for key, value in results_dic.items():
         is_match, is_label_dog, is_classification_dog = value[2], value[3], value[4]
+        if is_match:
+            n_labels_match += 1
         if is_label_dog:
             n_dogs_images += 1
             if is_classification_dog:
@@ -91,12 +93,14 @@ def calculates_results_stats(results_dic):
             n_notdogs_images += 1
             if not is_classification_dog:
                 n_correct_notdogs += 1
-
+    
+    results_stats_dic['n_images'] = n_images
     results_stats_dic['n_dogs_img'] = n_dogs_images
     results_stats_dic['n_notdogs_img'] = n_notdogs_images
     results_stats_dic["pct_correct_dogs"] = n_correct_dogs / n_dogs_images * 100 if n_dogs_images > 0 else 0.0
     results_stats_dic["pct_correct_notdogs"] = n_correct_notdogs / n_notdogs_images * 100 if n_notdogs_images > 0 else 0.0
     results_stats_dic["pct_correct_breed"] = n_correct_breed / n_dogs_images * 100 if n_dogs_images > 0 else 0.0
+    results_stats_dic["pct_labels_match"] = n_labels_match / n_images * 100 if n_images > 0 else 0.0
 
     # Replace None with the results_stats_dic dictionary that you created with this function 
     return results_stats_dic
