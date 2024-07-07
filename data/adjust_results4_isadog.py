@@ -4,7 +4,7 @@
 #                                                                             
 # PROGRAMMER: Marta Swierczewska
 # DATE CREATED: 06/07/2024                          
-# REVISED DATE: 06/07/2024
+# REVISED DATE: 07/07/2024
 # PURPOSE: Create a function adjust_results4_isadog that adjusts the results 
 #          dictionary to indicate whether or not the pet image label is of-a-dog, 
 #          and to indicate whether or not the classifier image label is of-a-dog.
@@ -70,7 +70,7 @@ def adjust_results4_isadog(results_dic, dogfile):
 
     dognames_dic = {}
 
-    with open('dognames.txt', 'r') as file:
+    with open(dogfile, 'r') as file:
       for line in file:
           dog_name = line.rstrip()
           if dog_name in dognames_dic:
