@@ -1,0 +1,78 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = resnet 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 4 key-value pairs.
+Below are 4 of them:
+ 1 key:            Giant_panda_01.jpeg  label:                giant panda
+ 2 key:                    Dog_02.jpeg  label:                        dog
+ 3 key:                   Sofa_01.jpeg  label:                       sofa
+ 4 key:                    Dog_01.jpeg  label:                        dog
+
+     MATCH:
+
+           Giant_panda_01.jpeg: 
+Real:                giant panda   Classifier: giant panda, panda, panda bear, coon bear, ailuropoda melanoleuca
+
+ NOT A MATCH:
+
+                   Dog_02.jpeg: 
+Real:                        dog   Classifier: pembroke, pembroke welsh corgi, corgi
+
+                  Sofa_01.jpeg: 
+Real:                       sofa   Classifier:          studio couch, day bed
+
+                   Dog_01.jpeg: 
+Real:                        dog   Classifier:                      chihuahua
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
+
+     MATCH:
+
+           Giant_panda_01.jpeg: 
+Real:                giant panda   Classifier: giant panda, panda, panda bear, coon bear, ailuropoda melanoleuca  
+PetLabelDog: 0  ClassLabelDog: 0
+
+ NOT A MATCH:
+
+                   Dog_02.jpeg: 
+Real:                        dog   Classifier: pembroke, pembroke welsh corgi, corgi  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                  Sofa_01.jpeg: 
+Real:                       sofa   Classifier:          studio couch, day bed  
+PetLabelDog: 0  ClassLabelDog: 0
+
+                   Dog_01.jpeg: 
+Real:                        dog   Classifier:                      chihuahua  
+PetLabelDog: 1  ClassLabelDog: 1
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+ ** Results
+
+CNN model architecture:  resnet 
+Number of images:  4 
+Number of dog images:  2 
+Number of not-dog images:  2
+pct_correct_dogs: 100.00%
+pct_correct_notdogs: 100.00%
+pct_correct_breed: 0.00%
+pct_labels_match: 25.00%
+
+Misclassified dogs: 
+
+Misclassified breeds: 
+Image:                    Dog_02.jpeg  Classifier labels: pembroke, pembroke welsh corgi, corgi
+Image:                    Dog_01.jpeg  Classifier labels:                      chihuahua
+
+** Total Elapsed Runtime: 0:0:0
