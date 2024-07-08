@@ -1,0 +1,21 @@
+Number of images:  40 
+Number of dog images:  30 
+Number of not-dog images:  10
+
+# CNN model architecture:  alexnet 
+pct_correct_dogs: 100.00%
+pct_correct_notdogs: 100.00%
+pct_correct_breed: 80.00%
+pct_labels_match: 75.00%
+
+# CNN model architecture:  resnet 
+pct_correct_dogs: 100.00%
+pct_correct_notdogs: 90.00%
+pct_correct_breed: 90.00%
+pct_labels_match: 82.50%
+
+# CNN model architecture:  vgg 
+pct_correct_dogs: 100.00%
+pct_correct_notdogs: 100.00%
+pct_correct_breed: 93.33%
+pct_labels_match: 87.50%
