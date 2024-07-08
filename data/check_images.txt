@@ -2,19 +2,19 @@ Questions regarding Uploaded Image Classification:
 
 1. Did the three model architectures classify the breed of dog in Dog_01.jpg to be the same breed? If not, report the differences in the classifications.
 
-Answer: 
+Answer: The real breed of dog in Dog_01.jpg is corgi. Alexnet model classified it as pembroke, pembroke welsh corgi, corgi; Resnet model classified it as chihuahua; VGG model classified it as cardigan, cardigan welsh corgi, corgi. 
 
 
 2. Did each of the three model architectures classify the breed of dog in Dog_01.jpg to be the same breed of dog as that model architecture classified Dog_02.jpg? If not, report the differences in the classifications.
 
-Answer: 
+Answer: Alexnet model classified dog in Dog_01.jpg as cpembroke, pembroke welsh corgi, corgi and dog in Dog_2.jpg as cardigan, cardigan welsh corgi, corgi; Resnet model classified dog in Dog_01.jpg as chihuahua and dog in Dog_2.jpg as pembroke, pembroke welsh corgi, corgi; VGG model classified both dog in Dog_01.jpg and Dog_02.jpg as cardigan, cardigan welsh corgi. 
 
 
 3. Did the three model architectures correctly classify Animal_Name_01.jpg and Object_Name_01.jpg to not be dogs? If not, report the misclassifications.
 
-Answer: 
+Answer: Yes, all three model architectures correctly classified Giant_panda_01.jpg and Sofa_01.jpg to not be dogs.
 
 
 4. Based upon your answers for questions 1. - 3. above, select the model architecture that you feel did the best at classifying the four uploaded images. Describe why you selected that model architecture as the best on uploaded image classification.
 
-Answer:
+Answer: For the uploaded images, VGG model architecture did the best job since it correctly classified the breed of dog in Dog_01.jpg, gave the same classificaiton of breed of dog in Dog_02.jpg as in Dog_01.jpg and correctly classified Giant_panda_01.jpg and Sofa_01.jpg to not be dogs.
